@@ -1,1 +1,23 @@
 /* we'll add some basic style here */
+body{
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    color: blue;
+}
+
+h1{
+    background-color: rgba(0, 0, 0, 0.2);
+    min-height: 10em;
+}
+
+main{
+    background-color: rgba(0, 255, 0, 0.2);
+    color: red;
+}
+main p:first-child{
+    color: green;
+}
+
+footer{
+    background-color: rgba(0, 0, 255, .1);
+    height: 5em;
+}

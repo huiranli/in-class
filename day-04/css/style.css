@@ -1,4 +1,19 @@
+*,*:before, *after {
+    box-sizing: border-box;
+}
 .intro {
+    /*display: inline; /*display property*/
+    position: relative;
+    width: 70vw;
+    background: rgba(0, 255, 0, 0.25);
+    margin-top: 5px;
+    margin-right: 300px;
+
+}
+
+#zen-supporting{
+    background: rgba(0, 0, 255, 0.25);
+    margin-right: 30vw;
 
 }
 
@@ -11,21 +26,43 @@ header {
 }
 
 .preamble {
-
-}
+    top: 425px;
+} /*default is static, the part is not moving*/
 
 .sidebar {
-
-}
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 255, 0, 0.75)
+} /* no longer a part of a flow*/
 
 #zen-supporting {
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.explanation, .particpation, .benefits, .requirements {
+.explanation, .participation, .benefits, .footer {
+    flex: 1;
+    flex-basis: 300px;
+}
 
+.requirements{ 
+    flex-grow: 2;
+    flex-shrink: 0;
+    flex-basis: 0;
+    flex: 2; /* this is the same as above flex-grow, shrink, and basics*/
+}
+
+[role=banner]{
+    display: fixed;
+    float: left;
+    width:400px;
+    margin: 0px 24px 25px 0px;
+    padding: 2em;
+    background: rgba(0, 255, 0, 0.25);
+    border: 10px solid aqua;
 }
 
 footer {
-
+    flex-basis: 15px;
 }
