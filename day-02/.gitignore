@@ -1,6 +1,10 @@
 # ignore node dependency files
 node_modules
 package-lock.json
+<<<<<<< HEAD
+=======
+
+>>>>>>> 408dc8852d8105398ec23f33cf31ea279ea44f91
 # ignore OS generated files
 .DS_Store
 Thumbs.db
