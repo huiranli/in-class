@@ -1,0 +1,22 @@
+{
+  "name": "in-class",
+  "version": "1.0.0",
+  "description": "These are the in-class files that I will be creating during my lectures. You can find the base files on the **master** branch and you can find the final version on the **demo** branch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huiranli/in-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huiranli/in-class/issues"
+  },
+  "homepage": "https://github.com/huiranli/in-class#readme",
+  "dependencies": {
+    "loadash": "^1.0.0"
+  }
+}
