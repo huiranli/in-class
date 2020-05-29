@@ -5,20 +5,20 @@
 class Puppy {
     // Constructor: takes in an img url, and a sound
     constructor(
-        img = "https://i.ytimg.com/vi/AZ2ZPmEfjvU/maxresdefault.jpg", 
-        sound = "WOOF"
-    ){
+        img = "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12231413/Labrador-Retriever-MP.jpg",
+        sound = "WOOF!"
+               ) {
         this.img = img;
         this.sound = sound;
     }
     // Method for "speaking" using responsiveVoice
-    bark(){
+    bark() {
         responsiveVoice.speak(this.sound);
     }
     // Render a Div that you can click on to bark
-    render(){
+    render() {
         let puppyCard = $('<div>');
-        puppyCard.attr('tittle', `puppy that says ${this.sound}`);
+        puppyCard.attr('title', `puppy that says ${this.sound}`);
         puppyCard.attr('class', 'puppyCard col-sm-4');
         puppyCard.css('background-image', `url(${this.img})`);
         puppyCard.click(() => this.bark());
@@ -67,36 +67,38 @@ class PuppyForm {
 // Class for the app
 class PuppyApp {
     // Constructor: takes in a parent element and list of puppies
-    constructor(parentElement, puppyList){
+    constructor(parentElement, puppyList) {
         this.parentElement = parentElement;
         this.puppyList = puppyList;
     }
     // Add puppy: pushes new data into list of puppies and re-renders the app
-    addPuppy(img, sound){
+    addPuppy(img, sound) {
         console.log(this);
         this.puppyList.push({
             url: img,
             sound: sound
-        })
+        });
+        this.render();
     }
 
     // Render;
     render() {
         // Empty parent element
         this.parentElement.empty();
-    
 
         // Create and render a new form
         let form = new PuppyForm(this.addPuppy.bind(this));
         this.parentElement.append(form.render());
+
         // Append puppy list element to parent (in a wrapper div)
-        let puppyWrapper = $('<div class="row>');
+        let puppyWrapper = $('<div class="row">');
         this.parentElement.append(puppyWrapper);
         this.puppyList.map((puppyInfo) => {
             let newPuppy = new Puppy(puppyInfo.url, puppyInfo.sound);
             puppyWrapper.append(newPuppy.render());
         })
-        // Append puppy list element to parent (in a wrapper div)
+
+        
 
     }
 }
@@ -105,7 +107,7 @@ class PuppyApp {
 let app = new PuppyApp(
     $('#content'),
     [{
-        url: "https://fox28spokane.com/wp-content/uploads/2020/04/AprilShoe-720x399.jpg",
+        url: "https://d17fnq9dkz9hgj.cloudfront.net/uploads/2020/04/shelter-dog-cropped-1-632x329.jpg",
         sound: "bark"
     }]
 );

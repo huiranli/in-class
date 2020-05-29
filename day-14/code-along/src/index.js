@@ -28,6 +28,11 @@ const employeeData = [
         title: "manager",
         salary: 105000
     },
+    {
+        name:"Elizabeth",
+        title:"CEO",
+        salary: 1200000
+    }
 ];
 
 ReactDOM.render(<SearchApp data={ employeeData } />, document.getElementById('root'));
